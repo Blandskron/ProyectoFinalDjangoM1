@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <h1>Blog Articles</h1>
+
+    {% if articles %}
+        <ul>
+            {% for article in articles %}
+                <li>
+                    <h2><a href="{% url 'article_detail' article.id %}">{{ article.title }}</a></h2>
+                    <p>{{ article.content }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No articles available.</p>
+    {% endif %}
+    
+    {% if user.is_authenticated %}
+        <form method="post" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <button type="submit">Logout</button>
+        </form>
+    {% else %}
+        <p>Please <a href="{% url 'login' %}">login</a> to comment.</p>
+    {% endif %}
+</body>
+</html>
