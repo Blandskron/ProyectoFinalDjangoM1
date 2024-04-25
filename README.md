@@ -34,3 +34,5 @@ python manage.py runserver
 
 5. Abre tu navegador web y navega a `http://127.0.0.1:8000/` para acceder a la aplicación.
 
+En este link encontraras toda la interaccion que realizamos con chatgpt para llevar a cabo este proyecto
+https://chat.openai.com/share/f03d4c68-db14-4040-9446-5d9d0c6fbf4a
